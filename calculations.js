@@ -1,7 +1,6 @@
 function parse_classes(class_str) {
-	let classes = class_str.split()
-
-
+	let classes = class_str.split();
+	// ,,, finish this method lmfao
 
 }
 
@@ -11,14 +10,23 @@ class Concentration {
 		this.requirements = requirement_list;
 	}
 
-	how_many_left(classes_taken) {
-		let needed = 0;
+	how_many_satisfy(classes_taken) {
 		let satisfied = new Array(this.num_classes).fill(0);
+		// for each requirement
 		for (var i = 0; i < this.requirements.length; i++) {
-			for (var j = 0; j < this.requirements[i].length; j++) {
-				
+			let reqs = this.requirements[i];
+			// there's a list of possible classes fulfilling it
+			for (var j = 0; j < reqs.length; j++) {
+				// if you have one of those classes...
+				let ind = classes_taken.indexOf(reqs[j]);
+				if (ind != -1) {
+					satisfied[i] = reqs[j];
+					classes_taken.splice(ind, 1);
+					continue;
+				}
 			}
 		}
+		return satisfied.
 	}
 }
 
