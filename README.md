@@ -12,7 +12,7 @@ next on the agenda:
 - create calculations object framework
 - create Computer Science object
 
-###features for me to think about
+### features for me to think about
 - option to pick how many semesters you have at brown? some sort of ability to pick that you have "two springs, two falls" left
 - button to do only ABs/only SCBs
 - button that says "I already have one major, it's : "
