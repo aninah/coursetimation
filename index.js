@@ -1,27 +1,24 @@
 /*     ----- SETTING UP DEPENDENCIES -----     */
 // setting up server
-var http = require('http'); 
-var express = require('express');
-var app = express();
-var server = http.createServer(app); 
+let http = require('http'); 
+let express = require('express');
+let app = express();
+let server = http.createServer(app); 
 // parsing forms
-var bodyParser = require('body-parser');
+let bodyParser = require('body-parser');
 app.use(bodyParser.urlencoded({extended:false}));
 app.use(bodyParser.json());
-// using a database
-var anyDB = require('any-db');
-var conn = anyDB.createConnection('sqlite3://chatroom.db');
-// templating.
-var engines = require('consolidate');
-app.engine('html', engines.hogan);
-app.set('views', __dirname + '/templates'); 
-app.set('view engine', 'html'); 
 //setting up paths.
-var path = require('path')
+let path = require('path')
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.static('public'));
-// app.use('/static', express.static('public'))
 app.use('/static', express.static(path.join(__dirname, 'public')))
+// using a database
+let anyDB = require('any-db');
+let conn = anyDB.createConnection('sqlite3://courses.db');
+
+/*     ----- DATABASE STUFF -----     */
+
 
 
 
@@ -47,7 +44,5 @@ app.post('/receive_classes', function(req, res) {
 app.get('*', function(req, res){
 	res.status(404).send('404 error- this page doesn\'t exist uwu');
 });
-
-
 
 server.listen(8080);
