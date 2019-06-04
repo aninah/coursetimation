@@ -18,7 +18,8 @@ given courses, tell how far you are from finishing a major
 - button that says "I already have one major, it's : "
 - crit review link for class recs 
 
-mvp: given a list of courses, returns how close you are to finishing a CS concentration. This is because I specialize in CS advising, but also because the CS concentration is one of the more complex concentration formats I've ever seen. 
+#### mvp:
+given a list of courses, returns how close you are to finishing a CS concentration. This is because I specialize in CS advising, but also because the CS concentration is one of the more complex concentration formats I've ever seen. 
 
 
 
