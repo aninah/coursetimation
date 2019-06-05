@@ -9,10 +9,10 @@ with open('courses.json') as json_file:
     for course in courses:
         x = course["code"].split()
         if x[0] == "CSCI":
-            c.add(course["title"])
+            c.add(course["code"].encode("ascii", "ignore"))
 
     print(len(c))
-    print(c)
+    print(sorted(c))
 
 # # connecting to the database file
 # conn = sqlite3.connect('courses.db')
