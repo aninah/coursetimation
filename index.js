@@ -17,10 +17,7 @@ app.use('/static', express.static(path.join(__dirname, 'public')))
 let anyDB = require('any-db');
 let conn = anyDB.createConnection('sqlite3://courses.db');
 
-/*     ----- DATABASE STUFF -----     */
-
-
-
+let calculations = require(path.join(__dirname,"/calculations.js"));
 
 /*     ----- ROUTES -----     */
 
