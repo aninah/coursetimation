@@ -9,13 +9,15 @@ given courses, tell how far you are from finishing a major
 - throw course list into a database for easier querying
 - create tentative calculations object framework
 - create CompSci object
-
-#### next on the agenda:
-- finish calculations code for CS
-- finish calculations code
-- test how_many_satisfy method
+- split logic into appropriate files
 - create easy way of generating requirements lists
 	- may involve querying db. for example maybe take in requirement that is cs220+, and use db query to get all cs classes at 220 and above
+- finish calculations code for CS
+- finish calculations code
+
+#### next on the agenda:
+- edit concentrations to be able to take in a "range" of classes?
+- test how_many_satisfy method
 - create concentrations list
 
 

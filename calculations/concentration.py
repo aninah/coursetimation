@@ -2,18 +2,31 @@ import numpy as np
 
 # representation of a brown concentration
 class Concentration:
-	def __init__(self, num_classes, requirement_list, requirement_names, additional_notes):
+	def __init__(self, num_classes, requirement_list, requirement_names, additional_notes, name):
 		self.num_classes = num_classes
 		self.reqs = requirement_list
 		self.additional_notes = additional_notes
 		self.req_names = requirement_names
 		self.classes = []
+		self.name = name
+
+	"""
+	percent_complete:
+		returns how close you are to completing a pathway
+	"""
+	def percent_complete(self, classes_taken):
+		left = 0
+		satisfied = Concentration.satisfied(self, classes_taken)
+		for s in satisfied:
+			if s != 0:
+				left+=1
+		return float(left)/self.num_classes
 
 	"""
 	all_valid_classes:
 		returns list of all possible classes that satisfy a requirement
 	"""	 
-	def all_valid_classes():
+	def all_valid_classes(self):
 		if self.classes:
 			return self.classes
 		all_classes = set()

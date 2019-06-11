@@ -7,7 +7,7 @@ with open('courses.json') as json_file:
     c = set()
     for course in courses:
         x = course["code"].split()
-        if x[0] == "CSCI":
+        if x[0] == "ANTH":
             c.add(course["code"].encode("ascii", "ignore"))
 
     print(len(c))
@@ -19,7 +19,7 @@ c = conn.cursor()
 
 # creating a new SQLite table 
 c.execute('DROP TABLE IF EXISTS courses');
-c.execute('CREATE TABLE courses(key INTEGER PRIMARY KEY, department TEXT, course_num INTEGER, instr TEXT)')
+c.execute('CREATE TABLE courses(key INTEGER PRIMARY KEY, department TEXT, course_num TEXT, instr TEXT)')
 
 # open json file, insert into db
 with open('courses.json') as json_file:  
